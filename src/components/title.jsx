@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { View, Image, StyleSheet } from 'react-native';
 import {
   WEDDING_DATE,
   WEDDING_LOCATION,
