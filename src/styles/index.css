@@ -1,5 +1,7 @@
 :root {
   --title-color: #d97d83;
+  --bg-color: #f0dfa9;
+  --font-color: #332701;
 }
 * {
   font-family: "Noto Serif KR", serif, -apple-system, BlinkMacSystemFont,
@@ -59,7 +61,54 @@
   }
 }
 
+.text-style-accent {
+  font-size: 1rem;
+  align-items: baseline;
+  font-family: "MaruBuri-Bold";
+  color: #292000;
+}
 /* 폰트 적용 */
+@font-face {
+  font-family: 'MaruBuri-Regular';
+  src: url("../assets/fonts/MaruBuri-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MaruBuri-SemiBold';
+  src: url("../assets/fonts/MaruBuri-SemiBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MaruBuri-Bold';
+  src: url("../assets/fonts/MaruBuri-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MaruBuri-Light';
+  src: url("../assets/fonts/MaruBuri-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TimesNewerRoman-Regular';
+  src: url("../assets/fonts/TimesNewerRoman-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 @font-face {
   font-family: "mom_to_daughter";
   src: url("../assets/fonts/mom_to_daughter.woff2") format("woff2"),
@@ -67,4 +116,29 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+.text-style-1 {
+  font-size: 1.05rem;
+  color: #292000;
+  justify-content: center;
+  align-items: center;
+  font-family: 'MaruBuri-Bold';
+  position: relative;
+  top: -1.5px;
+}
+
+.text-style-2 {
+  font-size: 1rem;
+  color: #292000;
+  justify-content: center;
+  align-items: center;
+  font-family: 'MaruBuri-Light' !important;
+  position: relative;
+  top: -1.5px;
+}
+
+.box {
+  display:flexbox;
+  align-items:center;
 }

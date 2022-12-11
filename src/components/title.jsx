@@ -8,7 +8,7 @@ import {
 } from "../../config.js";
 import BackgroundVideo from "../assets/BackgroundVideo.mp4";
 import GroovePaper from "../assets/GroovePaper.png";
-import MainImage from "../assets/main_image.jpeg";
+import MainImage from "../assets/main_image.png";
 
 const Layout = styled.div`
   width: 70%;
@@ -19,9 +19,17 @@ const Layout = styled.div`
 const TitleWrapper = styled.div`
   width: 100%;
   text-align: center;
-  padding-top: 42px;
-  font-weight: 500 !important;
-  color: var(--title-color);
+  padding-top: 50px;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+`;
+
+const SubTitleWrapper = styled.div`
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
@@ -29,6 +37,7 @@ const TitleWrapper = styled.div`
 `;
 
 const ImageBackground = styled.img`
+  padding-top: 20px;
   width: 100%;
 `;
 
@@ -36,39 +45,59 @@ const VideoBackground = styled.video`
   width: 100%;
 `;
 
-const WeddingInvitation = styled.p`
-  font-size: 0.825rem;
-  opacity: 0.45;
-  margin-bottom: 16px;
+const WeddingInvitation = styled.text`
+  width: 70%;
+  font-size: 1.3rem;
+  font-family: "MaruBuri-SemiBold";
+  text-align: center;
+  padding-top: 42px;  
+  color: var(--font-color);
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
 `;
 
-const GroomBride = styled.p`
-  font-size: 1.5rem;
-  font-weight: bold;
-  opacity: 0.9;
-  margin-bottom: 16px;
+const GroomBride = styled.text`
+  width: 70%;
+  font-size: 2rem;
+  font-family: "TimesNewerRoman-Regular";
+  color: var(--font-color);
+  text-align: center;
+  padding-top: 42px;  
+  color: var(--font-color);
+`;
+
+const Line = styled.hr`
+  color: #000000;
+  margin-left: -100px;
 `;
 
 const Schedule = styled.p`
   font-size: 1.06rem;
-  opacity: 0.65;
+  font-family: "MaruBuri-Light";
+  color: var(--font-color);
   margin-bottom: 24px;
 `;
+
 const Title = () => {
   return (
     <Layout>
       <TitleWrapper>
-        <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
+      <WeddingInvitation>WE ARE GETTING MARRIED!</WeddingInvitation>
+      </TitleWrapper>
+      <ImageBackground src={MainImage} />
+      <SubTitleWrapper>
         <GroomBride>
           {GROOM_NAME} &#38; {BRIDE_NAME}
         </GroomBride>
+        <Line></Line>
         <Schedule>
           {WEDDING_DATE}
           <br />
           {WEDDING_LOCATION}
         </Schedule>
-      </TitleWrapper>
-      <ImageBackground src={MainImage} />
+      </SubTitleWrapper>
     </Layout>
   );
 };

@@ -21,6 +21,7 @@
     "gatsby": "^4.14.0",
     "gatsby-plugin-styled-components": "^5.14.0",
     "react": "^17.0.1",
+    "react-calendar": "^4.0.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^17.0.1",
     "react-image-gallery": "^1.2.8",

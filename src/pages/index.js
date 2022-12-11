@@ -22,8 +22,8 @@ import "aos/dist/aos.css";
 const { Footer } = Layout;
 
 const Wrapper = styled.div`
-  background: #efebe9;
-  background-image: url(${GroovePaper});
+text-align: center;
+  background: var(--bg-color);
   width: 100%;
 `;
 
