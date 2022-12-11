@@ -135,10 +135,9 @@
   align-items: center;
   font-family: 'MaruBuri-Light' !important;
   position: relative;
-  top: -1.5px;
+  top: -1px;
 }
 
 .box {
-  display:flexbox;
-  align-items:center;
+  display:inline-flex;
 }

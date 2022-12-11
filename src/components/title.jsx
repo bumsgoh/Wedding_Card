@@ -11,15 +11,27 @@ import GroovePaper from "../assets/GroovePaper.png";
 import MainImage from "../assets/main_image.png";
 
 const Layout = styled.div`
-  width: 70%;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
   overflow: hidden;
-  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+`;
+
+const VerticalSpacer = styled.div`
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: ${props => props.height};
 `;
 
 const TitleWrapper = styled.div`
+  padding: 0px;
+  margin: 0px;  
   width: 100%;
   text-align: center;
-  padding-top: 50px;
+  display: inline-block;
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
@@ -27,9 +39,10 @@ const TitleWrapper = styled.div`
 `;
 
 const SubTitleWrapper = styled.div`
-  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  width: 100%
   text-align: center;
-  padding-top: 20px;
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
@@ -37,20 +50,20 @@ const SubTitleWrapper = styled.div`
 `;
 
 const ImageBackground = styled.img`
-  padding-top: 20px;
-  width: 100%;
+padding: 0px;
+  margin: 0px;
+  display: inline-block;
+  width: 80%;
 `;
 
-const VideoBackground = styled.video`
+const WeddingInvitation = styled.p`
+  padding: 0px;
+  margin: 0px;  
   width: 100%;
-`;
-
-const WeddingInvitation = styled.text`
-  width: 70%;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-family: "MaruBuri-SemiBold";
   text-align: center;
-  padding-top: 42px;  
+  display: inline-block;
   color: var(--font-color);
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
@@ -58,26 +71,42 @@ const WeddingInvitation = styled.text`
   -o-animation: fadein 3s; /* Opera */
 `;
 
-const GroomBride = styled.text`
-  width: 70%;
-  font-size: 2rem;
+const GroomBride = styled.div`
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  font-size: 2.5rem;
+  display: inline-block;
   font-family: "TimesNewerRoman-Regular";
   color: var(--font-color);
   text-align: center;
-  padding-top: 42px;  
-  color: var(--font-color);
 `;
 
 const Line = styled.hr`
-  color: #000000;
-  margin-left: -100px;
+padding: 0px;
+  margin: 0px;
+  color: #332701;
+  width: 80%;
+  display: inline-block;
+  text-align: center;
+  border-top: 0.1px solid #332701;
+  
 `;
 
-const Schedule = styled.p`
-  font-size: 1.06rem;
-  font-family: "MaruBuri-Light";
+const Schedule1 = styled.p`
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.3rem;
+  font-family: "MaruBuri-Regular";
   color: var(--font-color);
-  margin-bottom: 24px;
+`;
+
+const Schedule2 = styled.p`
+  padding: 0px;
+  margin: 0px;
+  font-family: "MaruBuri-Light";
+  font-size: 1.1rem;
+  color: var(--font-color);
 `;
 
 const Title = () => {
@@ -85,19 +114,25 @@ const Title = () => {
     <Layout>
       <TitleWrapper>
       <WeddingInvitation>WE ARE GETTING MARRIED!</WeddingInvitation>
+      <VerticalSpacer height="20px" />
       </TitleWrapper>
       <ImageBackground src={MainImage} />
+      
       <SubTitleWrapper>
+        <VerticalSpacer height="20px" />
         <GroomBride>
           {GROOM_NAME} &#38; {BRIDE_NAME}
         </GroomBride>
         <Line></Line>
-        <Schedule>
-          {WEDDING_DATE}
-          <br />
-          {WEDDING_LOCATION}
-        </Schedule>
+        
       </SubTitleWrapper>
+      <VerticalSpacer height="10px" />
+      <Schedule1>
+          {WEDDING_DATE}
+        </Schedule1>
+        <Schedule2>
+          {WEDDING_LOCATION}
+        </Schedule2>
     </Layout>
   );
 };

@@ -21,12 +21,16 @@ function getHeight({ axis, size }) {
 function getWidth({ axis, size }) {
   return axis === 'vertical' ? 1 : size;
 }
-const Spacer = styled.span`
-  display: inline-block;
-  width: ${getWidth}px;
-  min-width: ${getWidth}px;
-  height: ${getHeight}px;
-  min-height: ${getHeight}px;
+const VerticalSpacer = styled.div`
+  padding: 0px;
+  margin: 0px;
+  height: ${props => props.height};
+`;
+
+const HorizontalSpacer = styled.div`
+  padding: 0px;
+  margin: 0px;
+  width: ${props => props.width};
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -57,8 +61,10 @@ const Content = styled.p`
 `;
 
 const ImageWrapper = styled.div`
-  width: 100%;
-  text-align: center;
+  width: 20%;
+  height: 70px;
+  display:flex;
+  margin: auto;
   padding-top: 0px;
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
@@ -87,6 +93,8 @@ const GroomBride = styled.p`
   vertical-align: text-top;
   word-spacing: -2px;
   font-family: "MaruBuri-Bold";
+  margin: auto;
+  background-color: #bbbbbb;
 `;
 
 const ImageBackground = styled.img`
@@ -97,6 +105,8 @@ const ImageBackground = styled.img`
 
 const PhoneImage = styled.img`
   width: 1.1rem;
+  background-color: #bbbbbb;
+  margin: auto;
 `;
 
 const ParentsCallBox = styled.p`
@@ -137,36 +147,36 @@ const Greeting = () => {
         <br />
         많은 <ColorfulText>축하</ColorfulText>와 <ColorfulText>격려</ColorfulText> 부탁드립니다.
       </Content>
-      <Spacer axis="vertical" size={30}></Spacer>
+      <VerticalSpacer height="20px"></VerticalSpacer>
       <ImageWrapper>
         <ImageBackground src={ManImage}>
         </ImageBackground>
-        <Spacer axis="horizontal" size={30}></Spacer>
+        <HorizontalSpacer width="10px"></HorizontalSpacer>
         <ImageBackground src={WomanImage}> 
         </ImageBackground>
       </ImageWrapper>
-      <Spacer size={30}></Spacer>
+      <VerticalSpacer height="30px"></VerticalSpacer>
       <HorizontalWrapper>
       <div className="box">
         <GroomBride data-aos="fade-up">
           {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
         </GroomBride> 
-        <Spacer axis="horizontal" size={10}></Spacer>
+        <HorizontalSpacer width="10px"></HorizontalSpacer>
         <PhoneImage src={Call}>
         </PhoneImage>
       </div>
       <div />
       <div className="box">
-      <GroomBride data-aos="fade-up">
-        {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 이혜주
+        <GroomBride data-aos="fade-up">
+          {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 이혜주
         </GroomBride>
-        <Spacer axis="horizontal" size={10}></Spacer>
+        <HorizontalSpacer width="20px"></HorizontalSpacer>
         <PhoneImage src={Call}>
         </PhoneImage>
       </div>
       
       </HorizontalWrapper>
-      <Spacer axis="vertical" size={60}></Spacer>
+      <VerticalSpacer height="20px"></VerticalSpacer>
       <ParentsCallBox>
       혼주에게 연락하기
       </ParentsCallBox>

@@ -22,7 +22,7 @@ import "aos/dist/aos.css";
 const { Footer } = Layout;
 
 const Wrapper = styled.div`
-text-align: center;
+  text-align: center;
   background: var(--bg-color);
   width: 100%;
 `;
