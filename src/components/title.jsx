@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { View, Image, StyleSheet } from 'react-native';
 import {
   WEDDING_DATE,
   WEDDING_LOCATION,
@@ -64,6 +63,7 @@ const Title = () => {
           {WEDDING_LOCATION}
         </Schedule>
       </TitleWrapper>
+
       <VideoBackground autoPlay loop muted playsInline={true}>
         <source src={BackgroundVideo} type="video/mp4" />
       </VideoBackground>
