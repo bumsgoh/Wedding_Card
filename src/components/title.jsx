@@ -8,6 +8,7 @@ import {
 } from "../../config.js";
 import BackgroundVideo from "../assets/BackgroundVideo.mp4";
 import GroovePaper from "../assets/GroovePaper.png";
+import MainImage from "../assets/main_image.jpeg";
 
 const Layout = styled.div`
   width: 70%;
@@ -25,6 +26,10 @@ const TitleWrapper = styled.div`
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
   -o-animation: fadein 3s; /* Opera */
+`;
+
+const ImageBackground = styled.img`
+  width: 100%;
 `;
 
 const VideoBackground = styled.video`
@@ -63,10 +68,7 @@ const Title = () => {
           {WEDDING_LOCATION}
         </Schedule>
       </TitleWrapper>
-
-      <VideoBackground autoPlay loop muted playsInline={true}>
-        <source src={BackgroundVideo} type="video/mp4" />
-      </VideoBackground>
+      <ImageBackground src={MainImage} />
     </Layout>
   );
 };
