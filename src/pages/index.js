@@ -6,6 +6,7 @@ import "antd/dist/antd.css";
 import Gallery from "../components/gallery";
 import Greeting from "../components/greeting";
 import Title from "../components/title";
+import Calendar from "../components/calendar";
 import "../styles/index.css";
 
 import GroovePaper from "../assets/GroovePaper.png";
@@ -51,6 +52,7 @@ const IndexPage = () => {
       </audio>
       <Title />
       <Greeting />
+      <Calendar />
       <Gallery />
       <Location />
       <Quote />
