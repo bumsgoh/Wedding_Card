@@ -82,7 +82,7 @@ const GroomBride = styled.div`
   text-align: center;
 `;
 
-const Line = styled.hr`
+const Line = styled.p`
 padding: 0px;
   margin: 0px;
   color: #332701;
@@ -112,6 +112,7 @@ const Schedule2 = styled.p`
 const Title = () => {
   return (
     <Layout>
+      <VerticalSpacer height="50px" />
       <TitleWrapper>
       <WeddingInvitation>WE ARE GETTING MARRIED!</WeddingInvitation>
       <VerticalSpacer height="20px" />

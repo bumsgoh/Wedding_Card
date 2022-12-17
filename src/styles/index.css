@@ -1,6 +1,6 @@
 :root {
   --title-color: #d97d83;
-  --bg-color: #f0dfa9;
+  --bg-color: rgb(245, 232, 184);
   --font-color: #332701;
 }
 * {
@@ -136,6 +136,13 @@
   font-family: 'MaruBuri-Light' !important;
   position: relative;
   top: -1px;
+}
+
+
+.text-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .box {

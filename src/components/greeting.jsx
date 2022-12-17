@@ -65,11 +65,6 @@ const ImageWrapper = styled.div`
   height: 70px;
   display:flex;
   margin: auto;
-  padding-top: 0px;
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
 `;
 
 const HorizontalWrapper = styled.div`
@@ -94,7 +89,6 @@ const GroomBride = styled.p`
   word-spacing: -2px;
   font-family: "MaruBuri-Bold";
   margin: auto;
-  background-color: #bbbbbb;
 `;
 
 const ImageBackground = styled.img`
@@ -104,8 +98,7 @@ const ImageBackground = styled.img`
 `;
 
 const PhoneImage = styled.img`
-  width: 1.1rem;
-  background-color: #bbbbbb;
+  width: 1.3rem;
   margin: auto;
 `;
 
@@ -128,6 +121,22 @@ function ColorfulText({children}) {
 
 function ColorfulNormalText({children}) {
   return <span className="text-style-2">{children}</span>;
+}
+
+function BOXCALL() {
+  return <div className="text-table">
+    <div>
+      <p className="text-style-1">
+        <span className="text-style-1">
+          김진수・이미연의
+        <span>
+          &nbsp;&nbsp;
+        </span>
+          아들 &nbsp;<strong>민 재</strong>
+        </span>
+      </p>
+     </div>
+  </div>;
 }
  
 const Greeting = () => {
@@ -177,6 +186,7 @@ const Greeting = () => {
       
       </HorizontalWrapper>
       <VerticalSpacer height="20px"></VerticalSpacer>
+      <BOXCALL></BOXCALL>
       <ParentsCallBox>
       혼주에게 연락하기
       </ParentsCallBox>
