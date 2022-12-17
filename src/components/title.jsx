@@ -106,7 +106,7 @@ const Schedule2 = styled.p`
 const Title = () => {
   return (
     <Layout>
-      <ImageBackground src={MainImage} />
+      <ImageBackground src={"https://firebasestorage.googleapis.com/v0/b/abroadapp-22417.appspot.com/o/dev%2FuserProfileImage%2FtitleImage.png?alt=media&token=a96ee875-42b4-460f-920f-0b93ff54f271"} />
     </Layout>
   );
 };
