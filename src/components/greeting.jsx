@@ -71,10 +71,6 @@ const HorizontalWrapper = styled.div`
   width: 100%;
   axis: vertical;
   text-align: center;
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
 `;
 
 const GroomBride = styled.p`
