@@ -53,7 +53,7 @@ const ImageBackground = styled.img`
   padding: 0px;
   margin: 0px;
   display: inline-block;
-  width: 80%;
+  width: 100%;
 `;
 
 const WeddingInvitation = styled.p`

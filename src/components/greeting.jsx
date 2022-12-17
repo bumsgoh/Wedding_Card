@@ -13,7 +13,8 @@ import Flower from "../assets/flower1.png";
 import ManImage from "../assets/men_bow.png";
 import WomanImage from "../assets/women_bow.png";
 import Call from "../assets/call.png";
-
+import HStack from "../components/HStack";
+import Spacer from "../components/Spacer";
 
 function getHeight({ axis, size }) {
   return axis === 'horizontal' ? 1 : size;
@@ -77,7 +78,6 @@ const GroomBride = styled.p`
   font-size: 1.2rem;
   line-height: 1.75;
   color: var(--font-color);
-  width: 100%;
   text-align: center;
   align-items: center;
   letter-spacing: normal;
@@ -89,12 +89,12 @@ const GroomBride = styled.p`
 
 const ImageBackground = styled.img`
   padding-top:0px;
-  width: 100%;
   width: 4rem;
 `;
 
 const PhoneImage = styled.img`
-  width: 1.3rem;
+  width: 20px;
+  height: 20px;
   margin: auto;
 `;
 
@@ -153,39 +153,38 @@ const Greeting = () => {
         많은 <ColorfulText>축하</ColorfulText>와 <ColorfulText>격려</ColorfulText> 부탁드립니다.
       </Content>
       <VerticalSpacer height="20px"></VerticalSpacer>
-      <ImageWrapper>
+      <HStack>
+        <Spacer />
         <ImageBackground src={ManImage}>
         </ImageBackground>
         <HorizontalSpacer width="10px"></HorizontalSpacer>
         <ImageBackground src={WomanImage}> 
         </ImageBackground>
-      </ImageWrapper>
+        <Spacer />
+      </HStack>
       <VerticalSpacer height="30px"></VerticalSpacer>
-      <HorizontalWrapper>
-      <div className="box">
+      <HStack>
         <GroomBride data-aos="fade-up">
           {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
         </GroomBride> 
         <HorizontalSpacer width="10px"></HorizontalSpacer>
         <PhoneImage src={Call}>
         </PhoneImage>
-      </div>
-      <div />
-      <div className="box">
+      </HStack>
+
+      <HStack>
         <GroomBride data-aos="fade-up">
           {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 이혜주
         </GroomBride>
         <HorizontalSpacer width="20px"></HorizontalSpacer>
         <PhoneImage src={Call}>
         </PhoneImage>
-      </div>
-      
-      </HorizontalWrapper>
+      </HStack>
       <VerticalSpacer height="20px"></VerticalSpacer>
-      <BOXCALL></BOXCALL>
       <ParentsCallBox>
       혼주에게 연락하기
       </ParentsCallBox>
+      
     </Wrapper>
   );
 };
