@@ -14,7 +14,7 @@ import ManImage from "../assets/men_bow.png";
 import WomanImage from "../assets/women_bow.png";
 import Call from "../assets/call.png";
 import HStack from "../components/HStack";
-import Spacer from "../components/Spacer";
+import XSpacer from "../components/XSpacer";
 
 function getHeight({ axis, size }) {
   return axis === 'horizontal' ? 1 : size;
@@ -154,13 +154,13 @@ const Greeting = () => {
       </Content>
       <VerticalSpacer height="20px"></VerticalSpacer>
       <HStack>
-        <Spacer />
+        <XSpacer />
         <ImageBackground src={ManImage}>
         </ImageBackground>
         <HorizontalSpacer width="10px"></HorizontalSpacer>
         <ImageBackground src={WomanImage}> 
         </ImageBackground>
-        <Spacer />
+        <XSpacer />
       </HStack>
       <VerticalSpacer height="30px"></VerticalSpacer>
       <HStack>
