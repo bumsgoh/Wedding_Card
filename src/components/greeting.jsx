@@ -35,18 +35,10 @@ const HorizontalSpacer = styled.div`
 `;
 const Wrapper = styled.div`
   width: 100%;
-  padding-top: 42px;
+  padding-top: 200px;
+  padding-bottom: 200px;
   text-align: center;
   justify-content: center;
-`;
-
-const Title = styled.p`
-  font-size: 1rem;
-  color: var(--title-color);
-  font-weight: bold;
-  opacity: 0.85;
-  margin-bottom: 0;
-  text-align: center;
 `;
 
 const Content = styled.p`
@@ -62,19 +54,6 @@ const Content = styled.p`
   word-spacing: -2px;
 `;
 
-const ImageWrapper = styled.div`
-  width: 20%;
-  height: 70px;
-  display:flex;
-  margin: auto;
-`;
-
-const HorizontalWrapper = styled.div`
-  width: 100%;
-  axis: vertical;
-  text-align: center;
-`;
-
 const GroomBride = styled.p`
   font-size: 120%;
   color: var(--font-color);
@@ -82,7 +61,6 @@ const GroomBride = styled.p`
   display: inline;
   word-spacing: -2px;
   font-family: "MaruBuri-Bold";
-  border: 1px solid #0f0;
 `;
 
 const ImageBackground = styled.img`
