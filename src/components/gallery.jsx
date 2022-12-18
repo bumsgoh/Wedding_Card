@@ -12,17 +12,42 @@ import GalleryPhoto6 from "../assets/Gallery_Photo_6.webp";
 
 const Wrapper = styled.div`
   padding-top: 42px;
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
+`;
+
+const VerticalSpacer = styled.div`
+  padding: 0px;
+  margin: 0px;
+  height: ${props => props.height};
 `;
 
 const Title = styled.p`
-  font-size: 1rem;
-  color: var(--title-color);
-  font-weight: bold;
-  opacity: 0.85;
-  margin-bottom: 0;
+  font-size: 200%;
+  color: var(--font-color);
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-Bold";
+`;
+
+const NormalText = styled.p`
+  font-size: 130%;
+  color: var(--font-color);
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-Regular";
+`;
+
+const InfoText = styled.p`
+  font-size: 100%;
+  width: 100%;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--font-color);
+  border: 1px solid #0f0;
+  background: #FFFFFF;
+  letter-spacing: normal;
+  font-family: "MaruBuri-Regular";
 `;
 
 const images = [
@@ -55,12 +80,17 @@ const images = [
 const Gallery = () => {
   return (
     <Wrapper>
-      <Divider style={{ marginTop: 0, marginBottom: 32 }} plain>
-        <Title>우리의 아름다운 순간</Title>
-      </Divider>
-      <ImageGallery
-        showPlayButton={false}
-        showFullscreenButton={false}
+        <Title>갤러리</Title>
+        <VerticalSpacer height="0px"></VerticalSpacer>
+        <NormalText>GALLERY</NormalText>
+        <VerticalSpacer height="50px"></VerticalSpacer>
+        
+        <InfoText>좌우로 넘기면 신랑 신부의 사진을 보실 수 있습니다</InfoText>
+        
+      <ImageGallery 
+        showThumbnails={false}
+        showBullets={true}
+        showNav={false}
         items={images}
       />
     </Wrapper>
