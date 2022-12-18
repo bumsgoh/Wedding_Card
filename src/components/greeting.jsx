@@ -58,6 +58,7 @@ const Content = styled.p`
   align-items: center;
   letter-spacing: normal;
   vertical-align: text-top;
+  font-family: "MaruBuri-Light";
   word-spacing: -2px;
 `;
 
@@ -75,16 +76,13 @@ const HorizontalWrapper = styled.div`
 `;
 
 const GroomBride = styled.p`
-  font-size: 1.2rem;
-  line-height: 1.75;
+  font-size: 120%;
   color: var(--font-color);
-  text-align: center;
-  align-items: center;
   letter-spacing: normal;
-  vertical-align: text-top;
+  display: inline;
   word-spacing: -2px;
   font-family: "MaruBuri-Bold";
-  margin: auto;
+  border: 1px solid #0f0;
 `;
 
 const ImageBackground = styled.img`
@@ -95,7 +93,7 @@ const ImageBackground = styled.img`
 const PhoneImage = styled.img`
   width: 20px;
   height: 20px;
-  margin: auto;
+  margin-left: 10px;
 `;
 
 const ParentsCallBox = styled.p`
@@ -150,9 +148,10 @@ const Greeting = () => {
         <br />
         기쁜 날 부디 오셔서
         <br />
-        많은 <ColorfulText>축하</ColorfulText>와 <ColorfulText>격려</ColorfulText> 부탁드립니다.
+        많은 <ColorfulText>축하</ColorfulText>와 <ColorfulText>격려 </ColorfulText> 부탁드립니다.
       </Content>
       <VerticalSpacer height="20px"></VerticalSpacer>
+
       <HStack>
         <XSpacer />
         <ImageBackground src={ManImage}>
@@ -162,24 +161,23 @@ const Greeting = () => {
         </ImageBackground>
         <XSpacer />
       </HStack>
-      <VerticalSpacer height="30px"></VerticalSpacer>
-      <HStack>
-        <GroomBride data-aos="fade-up">
-          {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
-        </GroomBride> 
-        <HorizontalSpacer width="10px"></HorizontalSpacer>
-        <PhoneImage src={Call}>
-        </PhoneImage>
-      </HStack>
 
-      <HStack>
-        <GroomBride data-aos="fade-up">
+
+      <VerticalSpacer height="30px"></VerticalSpacer>
+        <span style={{flexDirection:'row', alignItems:'center'}}>
+        <GroomBride>
+          {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
+        </GroomBride>
+        <PhoneImage src={Call} />
+        </span>
+        <VerticalSpacer height="10px"></VerticalSpacer>
+        <span style={{flexDirection:'row', alignItems:'center'}}>
+        <GroomBride>
           {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 이혜주
         </GroomBride>
-        <HorizontalSpacer width="20px"></HorizontalSpacer>
         <PhoneImage src={Call}>
         </PhoneImage>
-      </HStack>
+        </span>
       <VerticalSpacer height="20px"></VerticalSpacer>
       <ParentsCallBox>
       혼주에게 연락하기
