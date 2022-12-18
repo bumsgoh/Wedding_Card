@@ -146,11 +146,19 @@
 
 .image-gallery-bullet {
   background: #fff !important;
+  box-shadow: 0 0px 0px #1a1a1a !important;
 }
 
 .image-gallery-bullets {
   position: relative !important;
   top: 10px !important;
+}
+
+.gallery-container {
+  position: relative !important;
+  top: -10px !important;
+  background: #fff !important;
+  margin-top: 0px !important;
 }
 
 .text-table {
