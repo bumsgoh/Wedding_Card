@@ -13,6 +13,7 @@ import GalleryPhoto7 from "../assets/gallery_7.webp";
 
 const Wrapper = styled.div`
   padding-top: 42px;
+  margin-bottom: 150px;
   width: 100%;
 `;
 
@@ -32,7 +33,7 @@ const Title = styled.p`
 
 const NormalText = styled.p`
   font-size: 130%;
-  color: var(--font-color);
+  color: #846400;
   letter-spacing: normal;
   display: inline;
   font-family: "MaruBuri-Regular";
@@ -75,6 +76,10 @@ const images = [
   {
     original: GalleryPhoto6,
     thumbnail: GalleryPhoto6,
+  },
+  {
+    original: GalleryPhoto7,
+    thumbnail: GalleryPhoto7,
   },
 ];
 

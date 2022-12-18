@@ -1,20 +1,61 @@
 import React, { useEffect } from "react";
 import { Divider } from "antd";
 import styled from "styled-components";
-import Flower from "../assets/flower2.png";
+import LocationImage from "../assets/locationImage.webp";
 
 const Wrapper = styled.div`
   padding-top: 42px;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 `;
 
-const Title = styled.span`
-  font-size: 1rem;
-  color: var(--title-color);
-  font-weight: bold;
-  opacity: 0.85;
-  margin-bottom: 0;
+const VerticalSpacer = styled.div`
+  padding: 0px;
+  margin: 0px;
+  height: ${props => props.height};
+`;
+
+const Title = styled.p`
+  font-size: 200%;
+  color: var(--font-color);
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-Bold";
+`;
+
+const NormalText = styled.p`
+  font-size: 130%;
+  color: #846400;
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-Regular";
+`;
+
+const LocationTitle = styled.p`
+  font-size: 200%;
+  color: var(--font-color);
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-SemiBold";
+  margin: 0;
+`;
+
+const LocationNormalText = styled.p`
+  font-size: 130%;
+  color: var(--font-color);
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-Regular";
+  margin: 0;
+`;
+
+const LocationSubNormalText = styled.p`
+  font-size: 100%;
+  color: #846400;
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-Regular";
+  margin: 0;
 `;
 
 const Image = styled.img`
@@ -35,6 +76,13 @@ const Content = styled.p`
   margin: 0;
 `;
 
+const ImageBackground = styled.img`
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+  width: 100%;
+`;
+
 const Map = styled.div`
   width: 100%;
   padding: 0;
@@ -47,8 +95,8 @@ const Location = () => {
   const executeScript = () => {
     const scriptTag = document.createElement("script");
     const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1652464367301",
-    "key" : "2a8fe",
+    "timestamp" : "1671398290485",
+    "key" : "2d3ge",
     "mapWidth" : "640",
     "mapHeight" : "360"
   }).render();`);
@@ -94,33 +142,19 @@ const Location = () => {
 
   return (
     <Wrapper>
-      <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
-        <Title>오시는 길</Title>
-      </Divider>
-      <Image src={Flower} />
-      <Map
-        id="daumRoughmapContainer1652464367301"
-        className="root_daum_roughmap root_daum_roughmap_landing"
-      ></Map>
-      <Content>
-        대구 수성구 두산동 888-2번지
-        <br />
-        호텔수성 수성스퀘어 3층 피오니홀
-        <br />
-        <br />
-        <Title>버스 이용시</Title>
-        <br />
-        <br />
-        410-1, 401 호텔수성 앞 하차
-        <br />
-        수성1-1, 수성3-1, 814 TBC방송국 앞 하차
-        <br />
-        <br />
-        <Title>지하철 이용시</Title>
-        <br />
-        <br />
-        3호선 수성못역 하차 (도보 10분)
-      </Content>
+      <Title>오시는 길</Title>
+      <VerticalSpacer height="0px"></VerticalSpacer>
+      <NormalText>LOCATION</NormalText>
+      <VerticalSpacer height="40px"></VerticalSpacer>
+      <LocationTitle>더마레보 15F Atelier.M</LocationTitle>
+      <VerticalSpacer height="0px"></VerticalSpacer>
+      <LocationNormalText>경기도 수원시 영통구 봉영로 1591</LocationNormalText>
+      <VerticalSpacer height="0px"></VerticalSpacer>
+      <LocationSubNormalText>Tel. 031-202-3773</LocationSubNormalText>
+      <VerticalSpacer height="30px"></VerticalSpacer>
+      <div id="daumRoughmapContainer1671398290485" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+      <VerticalSpacer height="40px"></VerticalSpacer>
+      <ImageBackground src={LocationImage} />
     </Wrapper>
   );
 };
