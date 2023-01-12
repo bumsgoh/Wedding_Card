@@ -195,3 +195,16 @@
   font-size: 2em;
   text-align: center;
 }
+
+/* money */
+.money-info-text {
+  font-size: 100%;
+  width: 100%;
+  text-align: center;
+  color: #FFFFFF;
+  background: #292000;
+  letter-spacing: normal;
+  font-family: "MaruBuri-Regular";
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
