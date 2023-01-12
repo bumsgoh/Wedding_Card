@@ -57,16 +57,6 @@ const IndexPage = () => {
       <Location />
       <Quote />
       <CongratulatoryMoney />
-      <Share />
-      <Footer
-        style={{
-          background: "#D7CCC8",
-          backgroundImage: `url(${GroovePaper})`,
-          opacity: 0.6,
-          textAlign: "center",
-        }}
-      >
-      </Footer>
     </Wrapper>
   );
 };

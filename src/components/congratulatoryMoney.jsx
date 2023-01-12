@@ -8,6 +8,8 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import HStack from "../components/HStack";
 import VStack from "../components/VStack";
 import XSpacer from "../components/XSpacer";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   GROOM_NAME,
   GROOM_ACCOUNT_NUMBER,
@@ -36,7 +38,6 @@ const Title = styled.p`
   color: var(--font-color);
   letter-spacing: normal;
   display: inline;
-  border: solid 1px #efddde;
   font-family: "MaruBuri-Bold";
 `;
 
@@ -46,7 +47,6 @@ const Content = styled.p`
   letter-spacing: normal;
   display: inline;
   font-family: "MaruBuri-SemiBold";
-  border: solid 1px #efddde;
 `;
 
 const InfoText = styled.p`
@@ -71,7 +71,7 @@ const AccountTitle = styled.span`
   color: #292000;
   letter-spacing: normal;
   font-family: "MaruBuri-Bold";
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px 20px 0px;
 `;
 const AccountContent = styled.span`
   font-size: 120%;
@@ -79,7 +79,7 @@ const AccountContent = styled.span`
   margin: 0px;
   color: #292000;
   letter-spacing: normal;
-  padding: 5px 0px 10px 0px;
+  padding: 0px 0px 10px 0px;
   font-family: "MaruBuri-Regular";
 `;
 
@@ -110,7 +110,7 @@ const ContactButton = styled.div`
 `;
 
 const CopyButton = styled.button`
-  width: 20%;
+  width: 100px;
   height: 30px;
   color: #FFFFFF;
   background: #292000;
@@ -134,8 +134,9 @@ const SpacingHStack = styled.div`
 `;
 
 const BorderWrapper = styled.div`
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
+  align-items: center;
   text-align: center;
   border: solid 1px #292000;
   border-radius: 10px;
@@ -144,7 +145,8 @@ const BorderWrapper = styled.div`
 const AttentNotice = styled.p`
   color: #292000;
   letter-spacing: normal;
-  font-size: 80%;
+  font-size: 100%;
+  padding: 10px;
   font-family: "MaruBuri-Regular";
 `;
 
@@ -169,6 +171,8 @@ const Spacer = ({
     />
   );
 };
+const notify = () => toast.success("복사되었습니다!");
+
 const ExampleComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   var title = isOpen == false ? "▼  신랑 측 계좌번호  ▼" : "▲  신랑 측 계좌번호  ▲";
@@ -183,8 +187,14 @@ const ExampleComponent = () => {
         <VStack>
           <AccountTitle>신랑 측</AccountTitle>
           <SpacingHStack>
-            <AccountContent>신한 110-508-665888 고상범</AccountContent>
-            <CopyButton onClick={()=>navigator.clipboard.writeText('110508665888')}>복사하기</CopyButton>
+            <VStack>
+            <AccountContent>신한은행</AccountContent>
+            <AccountContent>110-508-665888 고상범</AccountContent>
+            </VStack>
+            <CopyButton onClick={
+              ()=>{navigator.clipboard.writeText('110508665888');
+              notify();}
+            }>복사하기</CopyButton>
           </SpacingHStack>
         </VStack>
         <Spacer size={20} axis={"horizontal"}/>
@@ -198,8 +208,14 @@ const ExampleComponent = () => {
         <VStack>
           <AccountTitle>신부 측</AccountTitle>
           <SpacingHStack>
-            <AccountContent>카카오뱅크 3333-03-0952774 이혜주</AccountContent>
-            <CopyButton onClick={()=>navigator.clipboard.writeText('3333030952774')}>복사하기</CopyButton>
+            <VStack>
+            <AccountContent>카카오뱅크</AccountContent>
+            <AccountContent>3333-03-0952774 이혜주</AccountContent>
+            </VStack>
+            <CopyButton onClick={()=>{
+               navigator.clipboard.writeText('3333030952774');
+               notify();
+                }}>복사하기</CopyButton>
           </SpacingHStack>
         </VStack>
         <Spacer size={20} axis={"horizontal"}/>
@@ -232,6 +248,7 @@ const CongratulatoryMoney = () => {
 
     <ExampleComponent>
     </ExampleComponent>
+    <ToastContainer />
     <Spacer size={100} axis={"vertical"}/>
     <BorderWrapper>
     <AttentNotice>
