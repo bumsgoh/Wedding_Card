@@ -79,15 +79,7 @@ const AccountContent = styled.span`
   margin: 0px;
   color: #292000;
   letter-spacing: normal;
-  padding: 0px 0px 10px 0px;
   font-family: "MaruBuri-Regular";
-`;
-
-const SubContent = styled.p`
-  font-size: 0.875rem;
-  line-height: 1.75;
-  opacity: 0.75;
-  margin-bottom: 42px;
 `;
 
 const Description = styled.p`
@@ -97,20 +89,8 @@ const Description = styled.p`
   margin-top: 8px;
 `;
 
-const ButtonWrap = styled.div`
-  margin-bottom: 3.125rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-`;
-const ContactButton = styled.div`
-  width: 10.75rem;
-  padding: 2.188rem 0;
-`;
-
 const CopyButton = styled.button`
-  width: 100px;
+  width: 130px;
   height: 30px;
   color: #FFFFFF;
   background: #292000;
@@ -129,7 +109,7 @@ const Image = styled.img`
 const SpacingHStack = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 `;
 
@@ -146,7 +126,7 @@ const AttentNotice = styled.p`
   color: #292000;
   letter-spacing: normal;
   font-size: 100%;
-  padding: 10px;
+  margin: 30px;
   font-family: "MaruBuri-Regular";
 `;
 
