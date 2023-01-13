@@ -21,7 +21,7 @@ const Layout = styled.div`
 
 const ImageBackground = styled.img`
   padding: 0px;
-  margin: 0px;
+  margin: -50px 0px 0px 0px;
   display: inline-block;
   width: 100%;
 `;
