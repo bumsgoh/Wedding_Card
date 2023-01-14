@@ -91,11 +91,12 @@ const ParentsCallBox = styled.button`
   padding-bottom: 5px;
 `;
 
-const SpacingHStack = styled.div`
+const SpacingHStack = styled.span`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin: 0px;
 `;
 
 const InvisibleText = styled.div`
@@ -161,19 +162,20 @@ const Greeting = () => {
 
 
       <VerticalSpacer height="70px"></VerticalSpacer>
-        <span style={{flexDirection:'row', alignItems:'center'}}>
+        <SpacingHStack>
         <GroomBride>
           {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
         </GroomBride>
         <PhoneCallButton phoneNumber={'tel:01091403396'} />
-        </span>
-        <VerticalSpacer height="10px"></VerticalSpacer>
-        <span style={{flexDirection:'row', alignItems:'center'}}>
+        </SpacingHStack>
+        <SpacingHStack>
         <GroomBride>
-          {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> <InvisibleText>아</InvisibleText>이혜주
+          {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 
+          <InvisibleText>아</InvisibleText>
+          이혜주
         </GroomBride>
         <PhoneCallButton phoneNumber={'tel:01023871834'} />
-        </span>
+        </SpacingHStack>
       <VerticalSpacer height="40px"></VerticalSpacer>
       <ParentsCallBox>
       혼주에게 연락하기
