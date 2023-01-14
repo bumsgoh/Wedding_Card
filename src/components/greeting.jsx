@@ -56,13 +56,19 @@ const Content = styled.p`
   word-spacing: -2px;
 `;
 
-const GroomBride = styled.p`
-  font-size: 120%;
+const GroomBride = styled.span`
+  font-size: 4vw;
   color: var(--font-color);
   letter-spacing: normal;
-  display: inline;
-  word-spacing: -2px;
+  word-spacing: 4px;
   font-family: "MaruBuri-Bold";
+`;
+
+const ColorfulNormalText = styled.span`
+  font-size: 4vw;
+  color: #292000;
+  font-family: 'MaruBuri-Light' !important;
+  position: relative;
 `;
 
 const ImageBackground = styled.img`
@@ -71,10 +77,11 @@ const ImageBackground = styled.img`
 `;
 
 const PhoneImage = styled.img`
-  width: 16px;
-  height: 16px;
+  width: 5vw;
+  height: 5vw;
   color: transparent;
   margin-left: 10px;
+  align-items: center;
 `;
 
 const ParentsCallBox = styled.button`
@@ -99,6 +106,15 @@ const SpacingHStack = styled.span`
   margin: 0px;
 `;
 
+const BaselineHStack = styled.span`
+  display: inline-flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0px;
+`;
+
 const InvisibleText = styled.div`
   font-size: 0.8rem;
   color: transparent;
@@ -115,11 +131,6 @@ const Description = styled.p`
 function ColorfulText({children}) {
   return <span className="text-style-1">{children}</span>;
 }
-
-function ColorfulNormalText({children}) {
-  return <span className="text-style-2">{children}</span>;
-}
-
 function PhoneCallButton({phoneNumber}) {
   const handleClick = () => {
     window.location.href = phoneNumber;
@@ -135,53 +146,7 @@ const Greeting = () => {
   const [groomVisible, setGroomVisible] = useState(false);
   return (
     <Wrapper>
-      
-      <Content>
-        따듯한 봄날에 꽃 핀 사랑이
-        <br />
-        이번 봄, 여러분의 축복 아래
-        <br />
-        평생을 약속하고 같은 곳을 바라보며
-        <br />
-        함께 걸어가려 합니다.
-        <br />
-        <br />
-        기쁜 날 부디 오셔서
-        <br />
-        많은 <ColorfulText>축하</ColorfulText>와 <ColorfulText>격려 </ColorfulText> 부탁드립니다.
-      </Content>
-      <VerticalSpacer height="50px"></VerticalSpacer>
-
-      <SpacingHStack>
-        <ImageBackground src={ManImage}>
-        </ImageBackground>
-        <HorizontalSpacer width="10px"></HorizontalSpacer>
-        <ImageBackground src={WomanImage}> 
-        </ImageBackground>
-      </SpacingHStack>
-
-
-      <VerticalSpacer height="70px"></VerticalSpacer>
-        <SpacingHStack>
-        <GroomBride>
-          {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
-        </GroomBride>
-        <PhoneCallButton phoneNumber={'tel:01091403396'} />
-        </SpacingHStack>
-        <SpacingHStack>
-        <GroomBride>
-          {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 
-          <InvisibleText>아</InvisibleText>
-          이혜주
-        </GroomBride>
-        <PhoneCallButton phoneNumber={'tel:01023871834'} />
-        </SpacingHStack>
-      <VerticalSpacer height="40px"></VerticalSpacer>
-      <ParentsCallBox>
-      혼주에게 연락하기
-      </ParentsCallBox>
-
-      <Modal
+      <Modal className='modal'
         title={<b>신랑측 전화번호</b>}
         visible={groomVisible}
         onOk={() => setGroomVisible(false)}
@@ -220,6 +185,53 @@ const Greeting = () => {
         </div>
       </Modal>
 
+      <Content>
+        따듯한 봄날에 꽃 핀 사랑이
+        <br />
+        이번 봄, 여러분의 축복 아래
+        <br />
+        평생을 약속하고 같은 곳을 바라보며
+        <br />
+        함께 걸어가려 합니다.
+        <br />
+        <br />
+        기쁜 날 부디 오셔서
+        <br />
+        많은 <ColorfulText>축하</ColorfulText>와 <ColorfulText>격려 </ColorfulText> 부탁드립니다.
+      </Content>
+      <VerticalSpacer height="50px"></VerticalSpacer>
+
+      <SpacingHStack>
+        <ImageBackground src={ManImage}>
+        </ImageBackground>
+        <HorizontalSpacer width="10px"></HorizontalSpacer>
+        <ImageBackground src={WomanImage}> 
+        </ImageBackground>
+      </SpacingHStack>
+
+      <VerticalSpacer height="70px"></VerticalSpacer>
+
+        <BaselineHStack>
+        <GroomBride>
+          {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
+        </GroomBride>
+        <PhoneCallButton phoneNumber={'tel:01091403396'} />
+        </BaselineHStack>
+
+        <BaselineHStack>
+        <GroomBride>
+          {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 
+          <InvisibleText>아아</InvisibleText>
+          이혜주
+        </GroomBride>
+        <PhoneCallButton phoneNumber={'tel:01023871834'} />
+        </BaselineHStack>
+      <VerticalSpacer height="40px"></VerticalSpacer>
+      <ParentsCallBox onClick={
+        () => setGroomVisible(true)
+      }>
+      혼주에게 연락하기
+      </ParentsCallBox>
     </Wrapper>
   );
 };
