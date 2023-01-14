@@ -57,7 +57,7 @@ const Content = styled.p`
 `;
 
 const GroomBride = styled.span`
-  font-size: 4vw;
+  font-size: 5vw;
   color: var(--font-color);
   letter-spacing: normal;
   word-spacing: 4px;
@@ -65,7 +65,7 @@ const GroomBride = styled.span`
 `;
 
 const ColorfulNormalText = styled.span`
-  font-size: 4vw;
+  font-size: 5vw;
   color: #292000;
   font-family: 'MaruBuri-Light' !important;
   position: relative;
@@ -77,8 +77,8 @@ const ImageBackground = styled.img`
 `;
 
 const PhoneImage = styled.img`
-  width: 5vw;
-  height: 5vw;
+  width: 4.5vw;
+  height: 4.5vw;
   color: transparent;
   margin-left: 10px;
   align-items: center;
@@ -147,16 +147,17 @@ const Greeting = () => {
   return (
     <Wrapper>
       <Modal className='modal'
-        title={<b>신랑측 전화번호</b>}
+        title={<b>혼주 전화번호</b>}
         visible={groomVisible}
         onOk={() => setGroomVisible(false)}
         onCancel={() => setGroomVisible(false)}
         footer={[
           <Description>
-            계좌번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
+            전화번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
           </Description>,
         ]}
       >
+        <ColorfulText>신랑 측</ColorfulText>
         <div>
           <b>부 : {GROOM_FATHER_NAME}</b>
           <Divider type="vertical" />
@@ -166,11 +167,11 @@ const Greeting = () => {
               style={{ padding: 0, margin: 0 }}
               onClick={() => message.success("전화번호가 복사되었습니다.")}
             >
-              {"01087615733"}
+              {"010-8761-5733"}
             </Button>
           </CopyToClipboard>
         </div>
-        <div style={{ marginTop: 24, marginBottom: 24 }}>
+        <div style={{ marginTop: 10, marginBottom: 24 }}>
           <b>모 : {GROOM_MOTHER_NAME}</b>
           <Divider type="vertical" />
           <CopyToClipboard text={"01042090808"}>
@@ -179,7 +180,34 @@ const Greeting = () => {
               style={{ padding: 0, margin: 0 }}
               onClick={() => message.success("전화번호가 복사되었습니다.")}
             >
-              {"01087615733"}
+              {"010-4209-0808"}
+            </Button>
+          </CopyToClipboard>
+        </div>
+        <ColorfulText>신부 측</ColorfulText>
+        <div>
+          <b>부 : {BRIDE_FATHER_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={"01087615733"}>
+            <Button
+              type="text"
+              style={{ padding: 0, margin: 0 }}
+              onClick={() => message.success("전화번호가 복사되었습니다.")}
+            >
+              {"010-8761-5733"}
+            </Button>
+          </CopyToClipboard>
+        </div>
+        <div style={{ marginTop: 10, marginBottom: 24 }}>
+          <b>모 : {BRIDE_MOTHER_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={"01042090808"}>
+            <Button
+              type="text"
+              style={{ padding: 0, margin: 0 }}
+              onClick={() => message.success("전화번호가 복사되었습니다.")}
+            >
+              {"010-4209-0808"}
             </Button>
           </CopyToClipboard>
         </div>
@@ -217,7 +245,7 @@ const Greeting = () => {
         </GroomBride>
         <PhoneCallButton phoneNumber={'tel:01091403396'} />
         </BaselineHStack>
-
+        <VerticalSpacer height="10px"></VerticalSpacer>
         <BaselineHStack>
         <GroomBride>
           {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 
