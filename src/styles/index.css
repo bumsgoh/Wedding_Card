@@ -158,7 +158,15 @@
   position: relative !important;
   top: -10px !important;
   background: #fff !important;
+  color: #292000;
+  border: 2px solid #d97d83 !important;
   margin-top: 0px !important;
+}
+
+.account-table-line {
+  width: 100%;
+  border: solid 1px #292000;
+  background-color: #292000;
 }
 
 .text-table {
@@ -197,6 +205,9 @@
 }
 
 /* money */
+hr.dashed {
+  border-top: 1px dashed #bbb;
+}
 .money-info-text {
   font-size: 100%;
   width: 100%;

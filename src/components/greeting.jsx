@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from 'react';
 import styled from "styled-components";
-import { Divider } from "antd";
+import { Button, Divider, message, Modal } from "antd";
 import {
   GROOM_NAME,
   GROOM_FATHER_NAME,
@@ -15,6 +15,7 @@ import WomanImage from "../assets/women_bow.png";
 import Call from "../assets/call.png";
 import HStack from "../components/HStack";
 import XSpacer from "../components/XSpacer";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 function getHeight({ axis, size }) {
   return axis === 'horizontal' ? 1 : size;
@@ -35,10 +36,11 @@ const HorizontalSpacer = styled.div`
 `;
 const Wrapper = styled.div`
   width: 100%;
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 200px;
+  flex-direction: column;
   text-align: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const Content = styled.p`
@@ -69,15 +71,17 @@ const ImageBackground = styled.img`
 `;
 
 const PhoneImage = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  color: transparent;
   margin-left: 10px;
 `;
 
-const ParentsCallBox = styled.p`
-  width: 40%;
+const ParentsCallBox = styled.button`
+  width: 80%;
   font-size: 1rem;
   color: #9b3700;
+  background: transparent;
   display: inline-block;
   text-align: center;
   font-family: "MaruBuri-Light";
@@ -85,6 +89,26 @@ const ParentsCallBox = styled.p`
   border-radius: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+`;
+
+const SpacingHStack = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+const InvisibleText = styled.div`
+  font-size: 0.8rem;
+  color: transparent;
+  display: inline-block;
+`;
+
+const Description = styled.p`
+  font-size: 0.875rem;
+  line-height: 1.75;
+  opacity: 0.65;
+  margin-top: 8px;
 `;
 
 function ColorfulText({children}) {
@@ -95,26 +119,23 @@ function ColorfulNormalText({children}) {
   return <span className="text-style-2">{children}</span>;
 }
 
-function BOXCALL() {
-  return <div className="text-table">
-    <div>
-      <p className="text-style-1">
-        <span className="text-style-1">
-          김진수・이미연의
-        <span>
-          &nbsp;&nbsp;
-        </span>
-          아들 &nbsp;<strong>민 재</strong>
-        </span>
-      </p>
-     </div>
-  </div>;
+function PhoneCallButton({phoneNumber}) {
+  const handleClick = () => {
+    window.location.href = phoneNumber;
+  };
+
+  return (
+    <PhoneImage src={Call} onClick={handleClick}>
+    </PhoneImage>
+  );
 }
  
 const Greeting = () => {
+  const [groomVisible, setGroomVisible] = useState(false);
   return (
     <Wrapper>
-      <Content data-aos="fade-up">
+      
+      <Content>
         따듯한 봄날에 꽃 핀 사랑이
         <br />
         이번 봄, 여러분의 축복 아래
@@ -128,39 +149,75 @@ const Greeting = () => {
         <br />
         많은 <ColorfulText>축하</ColorfulText>와 <ColorfulText>격려 </ColorfulText> 부탁드립니다.
       </Content>
-      <VerticalSpacer height="20px"></VerticalSpacer>
+      <VerticalSpacer height="50px"></VerticalSpacer>
 
-      <HStack>
-        <XSpacer />
+      <SpacingHStack>
         <ImageBackground src={ManImage}>
         </ImageBackground>
         <HorizontalSpacer width="10px"></HorizontalSpacer>
         <ImageBackground src={WomanImage}> 
         </ImageBackground>
-        <XSpacer />
-      </HStack>
+      </SpacingHStack>
 
 
-      <VerticalSpacer height="30px"></VerticalSpacer>
+      <VerticalSpacer height="70px"></VerticalSpacer>
         <span style={{flexDirection:'row', alignItems:'center'}}>
         <GroomBride>
           {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}<ColorfulNormalText> 의 아들</ColorfulNormalText> 고상범
         </GroomBride>
-        <PhoneImage src={Call} />
+        <PhoneCallButton phoneNumber={'tel:01091403396'} />
         </span>
         <VerticalSpacer height="10px"></VerticalSpacer>
         <span style={{flexDirection:'row', alignItems:'center'}}>
         <GroomBride>
-          {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> 이혜주
+          {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}<ColorfulNormalText> 의 딸</ColorfulNormalText> <InvisibleText>아</InvisibleText>이혜주
         </GroomBride>
-        <PhoneImage src={Call}>
-        </PhoneImage>
+        <PhoneCallButton phoneNumber={'tel:01023871834'} />
         </span>
-      <VerticalSpacer height="20px"></VerticalSpacer>
+      <VerticalSpacer height="40px"></VerticalSpacer>
       <ParentsCallBox>
       혼주에게 연락하기
       </ParentsCallBox>
-      
+
+      <Modal
+        title={<b>신랑측 전화번호</b>}
+        visible={groomVisible}
+        onOk={() => setGroomVisible(false)}
+        onCancel={() => setGroomVisible(false)}
+        footer={[
+          <Description>
+            계좌번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
+          </Description>,
+        ]}
+      >
+        <div>
+          <b>부 : {GROOM_FATHER_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={"01087615733"}>
+            <Button
+              type="text"
+              style={{ padding: 0, margin: 0 }}
+              onClick={() => message.success("전화번호가 복사되었습니다.")}
+            >
+              {"01087615733"}
+            </Button>
+          </CopyToClipboard>
+        </div>
+        <div style={{ marginTop: 24, marginBottom: 24 }}>
+          <b>모 : {GROOM_MOTHER_NAME}</b>
+          <Divider type="vertical" />
+          <CopyToClipboard text={"01042090808"}>
+            <Button
+              type="text"
+              style={{ padding: 0, margin: 0 }}
+              onClick={() => message.success("전화번호가 복사되었습니다.")}
+            >
+              {"01087615733"}
+            </Button>
+          </CopyToClipboard>
+        </div>
+      </Modal>
+
     </Wrapper>
   );
 };

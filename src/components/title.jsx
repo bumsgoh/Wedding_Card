@@ -13,7 +13,7 @@ import MainImage from "../assets/titleImage.png";
 const Layout = styled.div`
   padding: 0px;
   margin: 0px;
-  width: 100%;
+  width: 80%;
   overflow: hidden;
   text-align: center;
   display: inline-block;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const XSpacer = styled.div`
-  flex-grow: 1000;
+  flex-grow: 100;
   height: 100%;
   width: 100%;
 `;
