@@ -97,13 +97,7 @@ const CopyButton = styled.button`
   letter-spacing: normal;
   font-family: "MaruBuri-Regular";
   border-radius: 25px;
-`;
-
-const Image = styled.img`
-  display: block;
-  margin: 0 auto;
-  width: 1.375rem;
-  padding-bottom: 42px;
+  border: none;
 `;
 
 const SpacingHStack = styled.div`
