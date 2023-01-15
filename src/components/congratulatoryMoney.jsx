@@ -126,7 +126,7 @@ const AttentNotice = styled.p`
   color: #292000;
   letter-spacing: normal;
   font-size: 100%;
-  margin: 30px;
+  margin: 10px;
   font-family: "MaruBuri-Regular";
 `;
 
@@ -234,7 +234,6 @@ const CongratulatoryMoney = () => {
     <AttentNotice>
     축하를 위해 참석하시는 분들을 <br/>쾌적하게 모실 수 있도록<br/>신랑 신부에게 미리 참석 의사를 전달해주세요
     </AttentNotice>
-
     </BorderWrapper>
 
       <Modal

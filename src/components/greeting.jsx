@@ -109,9 +109,8 @@ const SpacingHStack = styled.span`
 const BaselineHStack = styled.span`
   display: inline-flex;
   flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin: 0px;
 `;
 
@@ -188,26 +187,26 @@ const Greeting = () => {
         <div>
           <b>부 : {BRIDE_FATHER_NAME}</b>
           <Divider type="vertical" />
-          <CopyToClipboard text={"01087615733"}>
+          <CopyToClipboard text={"01030701834"}>
             <Button
               type="text"
               style={{ padding: 0, margin: 0 }}
               onClick={() => message.success("전화번호가 복사되었습니다.")}
             >
-              {"010-8761-5733"}
+              {"010-3070-1834"}
             </Button>
           </CopyToClipboard>
         </div>
         <div style={{ marginTop: 10, marginBottom: 24 }}>
           <b>모 : {BRIDE_MOTHER_NAME}</b>
           <Divider type="vertical" />
-          <CopyToClipboard text={"01042090808"}>
+          <CopyToClipboard text={"01041011834"}>
             <Button
               type="text"
               style={{ padding: 0, margin: 0 }}
               onClick={() => message.success("전화번호가 복사되었습니다.")}
             >
-              {"010-4209-0808"}
+              {"010-4101-1834"}
             </Button>
           </CopyToClipboard>
         </div>
