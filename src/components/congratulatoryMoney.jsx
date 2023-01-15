@@ -120,7 +120,7 @@ const AttentNotice = styled.p`
   color: #292000;
   letter-spacing:normal;
   line-height: 2;
-  font-size: 80%;
+  font-size: 100%;
   padding: 50px;
   font-family: "MaruBuri-Regular";
 `;
@@ -152,7 +152,7 @@ const ExampleComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   var title = isOpen == false ? "▼  계좌번호 확인  ▼" : "▲  계좌번호 확인  ▲";
   return (
-    <article style={{background: "transparent"}}>
+    <article style={{background: "white"}}>
       <button className="money-info-text"
        onClick={() => setIsOpen(!isOpen)}>{title}</button>
       <Collapse isOpen={isOpen}>
