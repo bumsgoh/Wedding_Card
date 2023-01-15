@@ -140,78 +140,84 @@ function PhoneCallButton({phoneNumber}) {
     </PhoneImage>
   );
 }
+
+function ModalView({groomVisible, setGroomVisible}) {
+  return (
+    <Modal
+    title={<b>혼주 전화번호</b>}
+    visible={groomVisible}
+    onOk={() => setGroomVisible(false)}
+    onCancel={() => setGroomVisible(false)}
+    footer={
+      <Description>
+        전화번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
+      </Description>
+    }
+  >
+    <ColorfulText>신랑 측</ColorfulText>
+    <div>
+      <b>부 : {GROOM_FATHER_NAME}</b>
+      <Divider type="vertical" />
+      <CopyToClipboard text={"01087615733"}>
+        <Button
+          type="text"
+          style={{ padding: 0, margin: 0 }}
+          onClick={() => message.success("전화번호가 복사되었습니다.")}
+        >
+          {"010-8761-5733"}
+        </Button>
+      </CopyToClipboard>
+    </div>
+    <div style={{ marginTop: 10, marginBottom: 24 }}>
+      <b>모 : {GROOM_MOTHER_NAME}</b>
+      <Divider type="vertical" />
+      <CopyToClipboard text={"01042090808"}>
+        <Button
+          type="text"
+          style={{ padding: 0, margin: 0 }}
+          onClick={() => message.success("전화번호가 복사되었습니다.")}
+        >
+          {"010-4209-0808"}
+        </Button>
+      </CopyToClipboard>
+    </div>
+    
+    <ColorfulText>신부 측</ColorfulText>
+    <div>
+      <b>부 : {BRIDE_FATHER_NAME}</b>
+      <Divider type="vertical" />
+      <CopyToClipboard text={"01030701834"}>
+        <Button
+          type="text"
+          style={{ padding: 0, margin: 0 }}
+          onClick={() => message.success("전화번호가 복사되었습니다.")}
+        >
+          {"010-3070-1834"}
+        </Button>
+      </CopyToClipboard>
+    </div>
+    <div style={{ marginTop: 10, marginBottom: 24 }}>
+      <b>모 : {BRIDE_MOTHER_NAME}</b>
+      <Divider type="vertical" />
+      <CopyToClipboard text={"01041011834"}>
+        <Button
+          type="text"
+          style={{ padding: 0, margin: 0 }}
+          onClick={() => message.success("전화번호가 복사되었습니다.")}
+        >
+          {"010-4101-1834"}
+        </Button>
+      </CopyToClipboard>
+  </div>
+  </Modal>
+  );
+}
  
 const Greeting = () => {
   const [groomVisible, setGroomVisible] = useState(false);
   return (
     <Wrapper>
-      <Modal className='modal'
-        title={<b>혼주 전화번호</b>}
-        visible={groomVisible}
-        onOk={() => setGroomVisible(false)}
-        onCancel={() => setGroomVisible(false)}
-        footer={[
-          <Description>
-            전화번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
-          </Description>,
-        ]}
-      >
-        <ColorfulText>신랑 측</ColorfulText>
-        <div>
-          <b>부 : {GROOM_FATHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={"01087615733"}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("전화번호가 복사되었습니다.")}
-            >
-              {"010-8761-5733"}
-            </Button>
-          </CopyToClipboard>
-        </div>
-        <div style={{ marginTop: 10, marginBottom: 24 }}>
-          <b>모 : {GROOM_MOTHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={"01042090808"}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("전화번호가 복사되었습니다.")}
-            >
-              {"010-4209-0808"}
-            </Button>
-          </CopyToClipboard>
-        </div>
-        <ColorfulText>신부 측</ColorfulText>
-        <div>
-          <b>부 : {BRIDE_FATHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={"01030701834"}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("전화번호가 복사되었습니다.")}
-            >
-              {"010-3070-1834"}
-            </Button>
-          </CopyToClipboard>
-        </div>
-        <div style={{ marginTop: 10, marginBottom: 24 }}>
-          <b>모 : {BRIDE_MOTHER_NAME}</b>
-          <Divider type="vertical" />
-          <CopyToClipboard text={"01041011834"}>
-            <Button
-              type="text"
-              style={{ padding: 0, margin: 0 }}
-              onClick={() => message.success("전화번호가 복사되었습니다.")}
-            >
-              {"010-4101-1834"}
-            </Button>
-          </CopyToClipboard>
-        </div>
-      </Modal>
-
+      <ModalView groomVisible={groomVisible} setGroomVisible={setGroomVisible} />
       <Content>
         따듯한 봄날에 꽃 핀 사랑이
         <br />
