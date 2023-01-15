@@ -32,7 +32,7 @@ const NormalText = styled.p`
 `;
 
 const LocationTitle = styled.p`
-  font-size: 200%;
+  font-size: 150%;
   color: var(--font-color);
   letter-spacing: normal;
   display: inline;
@@ -41,7 +41,7 @@ const LocationTitle = styled.p`
 `;
 
 const LocationNormalText = styled.p`
-  font-size: 130%;
+  font-size: 100%;
   color: var(--font-color);
   letter-spacing: normal;
   display: inline;
@@ -151,9 +151,9 @@ const Location = () => {
       <LocationNormalText>경기도 수원시 영통구 봉영로 1591</LocationNormalText>
       <VerticalSpacer height="0px"></VerticalSpacer>
       <LocationSubNormalText>Tel. 031-202-3773</LocationSubNormalText>
-      <VerticalSpacer height="30px"></VerticalSpacer>
+      <VerticalSpacer height="60px"></VerticalSpacer>
       <div id="daumRoughmapContainer1671398290485" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-      <VerticalSpacer height="40px"></VerticalSpacer>
+      <VerticalSpacer height="60px"></VerticalSpacer>
       <ImageBackground src={LocationImage} />
     </Wrapper>
   );

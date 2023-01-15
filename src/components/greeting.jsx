@@ -36,8 +36,8 @@ const HorizontalSpacer = styled.div`
 `;
 const Wrapper = styled.div`
   width: 100%;
-  padding-top: 150px;
-  padding-bottom: 200px;
+  padding-top: 250px;
+  padding-bottom: 250px;
   flex-direction: column;
   text-align: center;
   justify-content: flex-start;

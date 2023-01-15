@@ -15,11 +15,12 @@
 }
 
 .root_daum_roughmap {
-  width: 100% !important;
+  width: 80% !important;
   max-height: 240px !important;
 }
 .root_daum_roughmap_landing {
   margin: auto !important;
+  width: 80% !important;
 }
 .root_daum_roughmap .wrap_btn_zoom {
   display: none !important;

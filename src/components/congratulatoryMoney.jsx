@@ -26,26 +26,27 @@ import {
 } from "../../config";
 
 const Wrapper = styled.div`
-  padding-top: 42px;
+  padding-top: 250px;
   padding-bottom: 18px;
   width: 100%;
   margin: 0 auto;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const Title = styled.p`
   font-size: 200%;
   color: var(--font-color);
   letter-spacing: normal;
-  display: inline;
   font-family: "MaruBuri-Bold";
+  margin-bottom: 80px;
 `;
 
 const Content = styled.p`
   font-size: 100%;
   color: #rgba(51 39 1, 0.9);
   letter-spacing: normal;
-  display: inline;
   font-family: "MaruBuri-SemiBold";
 `;
 
@@ -82,13 +83,6 @@ const AccountContent = styled.span`
   font-family: "MaruBuri-Regular";
 `;
 
-const Description = styled.p`
-  font-size: 0.875rem;
-  line-height: 1.75;
-  opacity: 0.65;
-  margin-top: 8px;
-`;
-
 const CopyButton = styled.button`
   width: 130px;
   height: 30px;
@@ -121,7 +115,7 @@ const AttentNotice = styled.p`
   letter-spacing:normal;
   line-height: 2;
   font-size: 100%;
-  padding: 50px;
+  padding: 30px;
   font-family: "MaruBuri-Regular";
 `;
 
@@ -206,15 +200,8 @@ const CongratulatoryMoney = () => {
 
   return (
     <Wrapper>
-      <Divider
-        data-aos="fade-up"
-        plain
-        style={{ marginTop: 0, marginBottom: 80 }}
-      >
-        <Title>마음 전하실 곳</Title>
-      </Divider>
-
-      <Content data-aos="fade-up">
+      <Title>마음 전하실 곳</Title>
+      <Content>
       참석이 어려우신 분들은 <br /> 축하의 마음을 전달해주세요
       </Content>
       <Spacer size={100}/>
@@ -228,7 +215,7 @@ const CongratulatoryMoney = () => {
     축하를 위해 참석하시는 분들을 <br/> 쾌적하게 모실 수 있도록<br/>신랑 신부에게 미리 참석 의사를 전달해주세요
     </AttentNotice>
     </BorderWrapper>
-    <Spacer size={100} axis={"vertical"}/>
+    <Spacer size={150} axis={"vertical"}/>
     </Wrapper>
   );
 };

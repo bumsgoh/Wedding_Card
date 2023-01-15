@@ -12,8 +12,8 @@ import GalleryPhoto6 from "../assets/gallery_6.webp";
 import GalleryPhoto7 from "../assets/gallery_7.webp";
 
 const Wrapper = styled.div`
-  padding-top: 200px;
-  margin-bottom: 150px;
+  padding-top: 300px;
+  margin-bottom: 250px;
   width: 100%;
 `;
 
