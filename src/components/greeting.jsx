@@ -149,7 +149,7 @@ function ModalView({groomVisible, setGroomVisible}) {
     onOk={() => setGroomVisible(false)}
     onCancel={() => setGroomVisible(false)}
     footer={
-      <Description>
+      <Description style={{fontFamily: 'MaruBuri-Regular'}}>
         전화번호 클릭시, 붙여넣기 가능한 텍스트로 복사됩니다.
       </Description>
     }
