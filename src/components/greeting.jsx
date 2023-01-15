@@ -144,7 +144,7 @@ function PhoneCallButton({phoneNumber}) {
 function ModalView({groomVisible, setGroomVisible}) {
   return (
     <Modal
-    title={<b>혼주 전화번호</b>}
+    title={<span style={{fontFamily: 'MaruBuri-Bold'}}>혼주 전화번호</span>}
     visible={groomVisible}
     onOk={() => setGroomVisible(false)}
     onCancel={() => setGroomVisible(false)}
@@ -155,8 +155,9 @@ function ModalView({groomVisible, setGroomVisible}) {
     }
   >
     <ColorfulText>신랑 측</ColorfulText>
+    <VerticalSpacer size={10} />
     <div>
-      <b>부 : {GROOM_FATHER_NAME}</b>
+    <span style={{fontFamily: 'MaruBuri-Regular'}}>부 : {GROOM_FATHER_NAME}</span>
       <Divider type="vertical" />
       <CopyToClipboard text={"01087615733"}>
         <Button
@@ -169,7 +170,7 @@ function ModalView({groomVisible, setGroomVisible}) {
       </CopyToClipboard>
     </div>
     <div style={{ marginTop: 10, marginBottom: 24 }}>
-      <b>모 : {GROOM_MOTHER_NAME}</b>
+    <span style={{fontFamily: 'MaruBuri-Regular'}}>모 : {GROOM_MOTHER_NAME}</span>
       <Divider type="vertical" />
       <CopyToClipboard text={"01042090808"}>
         <Button
@@ -183,8 +184,9 @@ function ModalView({groomVisible, setGroomVisible}) {
     </div>
     
     <ColorfulText>신부 측</ColorfulText>
+    <VerticalSpacer size={10} />
     <div>
-      <b>부 : {BRIDE_FATHER_NAME}</b>
+    <span style={{fontFamily: 'MaruBuri-Regular'}}>부 : {BRIDE_FATHER_NAME}</span>
       <Divider type="vertical" />
       <CopyToClipboard text={"01030701834"}>
         <Button
@@ -197,7 +199,7 @@ function ModalView({groomVisible, setGroomVisible}) {
       </CopyToClipboard>
     </div>
     <div style={{ marginTop: 10, marginBottom: 24 }}>
-      <b>모 : {BRIDE_MOTHER_NAME}</b>
+    <span style={{fontFamily: 'MaruBuri-Regular'}}>모 : {BRIDE_MOTHER_NAME}</span>
       <Divider type="vertical" />
       <CopyToClipboard text={"01041011834"}>
         <Button
