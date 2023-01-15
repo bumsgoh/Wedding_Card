@@ -114,19 +114,20 @@ const SpacingHStack = styled.div`
 `;
 
 const BorderWrapper = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   align-items: center;
   text-align: center;
   border: solid 1px #292000;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 const AttentNotice = styled.p`
   color: #292000;
-  letter-spacing: normal;
-  font-size: 100%;
-  margin: 10px;
+  letter-spacing:normal;
+  line-height: 2;
+  font-size: 80%;
+  padding: 50px;
   font-family: "MaruBuri-Regular";
 `;
 
@@ -155,9 +156,9 @@ const notify = () => toast.success("복사되었습니다!");
 
 const ExampleComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
-  var title = isOpen == false ? "▼  신랑 측 계좌번호  ▼" : "▲  신랑 측 계좌번호  ▲";
+  var title = isOpen == false ? "▼  계좌번호 확인  ▼" : "▲  계좌번호 확인  ▲";
   return (
-    <article style={{background: "white"}}>
+    <article style={{background: "transparent"}}>
       <button className="money-info-text"
        onClick={() => setIsOpen(!isOpen)}>{title}</button>
       <Collapse isOpen={isOpen}>
@@ -230,9 +231,10 @@ const CongratulatoryMoney = () => {
     <Spacer size={100} axis={"vertical"}/>
     <BorderWrapper>
     <AttentNotice>
-    축하를 위해 참석하시는 분들을 <br/>쾌적하게 모실 수 있도록<br/>신랑 신부에게 미리 참석 의사를 전달해주세요
+    축하를 위해 참석하시는 분들을 <br/> 쾌적하게 모실 수 있도록<br/>신랑 신부에게 미리 참석 의사를 전달해주세요
     </AttentNotice>
     </BorderWrapper>
+    <Spacer size={100} axis={"vertical"}/>
     </Wrapper>
   );
 };

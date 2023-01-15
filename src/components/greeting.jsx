@@ -36,7 +36,7 @@ const HorizontalSpacer = styled.div`
 `;
 const Wrapper = styled.div`
   width: 100%;
-  padding-top: 100px;
+  padding-top: 150px;
   padding-bottom: 200px;
   flex-direction: column;
   text-align: center;
