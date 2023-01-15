@@ -12,7 +12,7 @@ import GalleryPhoto6 from "../assets/gallery_6.webp";
 import GalleryPhoto7 from "../assets/gallery_7.webp";
 
 const Wrapper = styled.div`
-  padding-top: 42px;
+  padding-top: 150px;
   margin-bottom: 150px;
   width: 100%;
 `;
@@ -94,6 +94,7 @@ const Gallery = () => {
         <InfoText>좌우로 넘기면 신랑 신부의 사진을 보실 수 있습니다</InfoText>
         
       <ImageGallery 
+        height="100%"
         showThumbnails={false}
         showBullets={true}
         showPlayButton={false}
