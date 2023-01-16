@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import Collapsible from 'react-collapsible';
 import Collapse from "react-collapsible-wrapper";
 import { Button, Divider, message, Modal } from "antd";
-import { CheckCircleTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import CopyToClipboard from "react-copy-to-clipboard";
 import HStack from "../components/HStack";
 import VStack from "../components/VStack";
-import XSpacer from "../components/XSpacer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -29,18 +26,22 @@ const Wrapper = styled.div`
   padding-top: 250px;
   padding-bottom: 18px;
   width: 100%;
-  margin: 0 auto;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 `;
 
-const Title = styled.p`
+const Title = styled.span`
   font-size: 200%;
   color: var(--font-color);
   letter-spacing: normal;
   font-family: "MaruBuri-Bold";
-  margin-bottom: 80px;
+`;
+
+const NormalText = styled.span`
+  font-size: 130%;
+  color: #846400;
+  font-family: "MaruBuri-Regular";
 `;
 
 const Content = styled.p`
@@ -48,20 +49,6 @@ const Content = styled.p`
   color: #rgba(51 39 1, 0.9);
   letter-spacing: normal;
   font-family: "MaruBuri-SemiBold";
-`;
-
-const InfoText = styled.p`
-  font-size: 100%;
-  width: 100%;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 0px;
-  color: #FFFFFF;
-  background: #292000;
-  letter-spacing: normal;
-  font-family: "MaruBuri-Regular";
-  margin-top: 90px;
 `;
 
 const AccountTitle = styled.span`
@@ -160,10 +147,11 @@ const ExampleComponent = () => {
             <AccountContent>신한은행</AccountContent>
             <AccountContent>110-508-665888 고상범</AccountContent>
             </VStack>
+            <CopyToClipboard text="110508665888">
             <CopyButton onClick={
-              ()=>{navigator.clipboard.writeText('110508665888');
-              notify();}
+              ()=>{ notify(); }
             }>복사하기</CopyButton>
+            </CopyToClipboard>
           </SpacingHStack>
         </VStack>
         <Spacer size={20} axis={"horizontal"}/>
@@ -181,10 +169,11 @@ const ExampleComponent = () => {
             <AccountContent>카카오뱅크</AccountContent>
             <AccountContent>3333-03-0952774 이혜주</AccountContent>
             </VStack>
+            <CopyToClipboard text="3333030952774">
             <CopyButton onClick={()=>{
-               navigator.clipboard.writeText('3333030952774');
                notify();
                 }}>복사하기</CopyButton>
+              </CopyToClipboard>
           </SpacingHStack>
         </VStack>
         <Spacer size={20} axis={"horizontal"}/>
@@ -201,6 +190,9 @@ const CongratulatoryMoney = () => {
   return (
     <Wrapper>
       <Title>마음 전하실 곳</Title>
+      <Spacer size={0} axis={"vertical"}/>
+      <NormalText>ACCOUNT</NormalText>
+      <Spacer size={100} axis={"vertical"}/>
       <Content>
       참석이 어려우신 분들은 <br /> 축하의 마음을 전달해주세요
       </Content>

@@ -94,7 +94,6 @@ const Gallery = () => {
         <InfoText>좌우로 넘기면 신랑 신부의 사진을 보실 수 있습니다</InfoText>
         
       <ImageGallery 
-        height="100%"
         showThumbnails={false}
         showBullets={true}
         showPlayButton={false}

@@ -151,7 +151,7 @@ const Location = () => {
       <LocationNormalText>경기도 수원시 영통구 봉영로 1591</LocationNormalText>
       <VerticalSpacer height="0px"></VerticalSpacer>
       <LocationSubNormalText>Tel. 031-202-3773</LocationSubNormalText>
-      <VerticalSpacer height="60px"></VerticalSpacer>
+      <VerticalSpacer height="20px"></VerticalSpacer>
       <div id="daumRoughmapContainer1671398290485" class="root_daum_roughmap root_daum_roughmap_landing"></div>
       <VerticalSpacer height="60px"></VerticalSpacer>
       <ImageBackground src={LocationImage} />
