@@ -30,6 +30,7 @@ const Wrapper = styled.div`
 const Head = () => (
   <>
     <title>고상범 & 이혜주 결혼합니다</title>
+    <thumb></thumb>
     <meta name="description" content="상범 & 혜주 모바일 청첩장" />
     <meta name="keywords" content="React, JavaScript, meta tags" />
     <meta name="thumbnail" content="https://firebasestorage.googleapis.com/v0/b/abroadapp-22417.appspot.com/o/dev%2FuserProfileImage%2Fgallery_7.jpeg?alt=media&token=adb2f816-a373-4f28-856a-86de3af9d2d6" />
@@ -56,11 +57,16 @@ const IndexPage = () => {
   return (
     
     <Wrapper>
+      
+
       <Helmet>
-      <title>고상범 & 이혜주 결혼합니다</title>
-      <meta name="description" content="상범 & 혜주 모바일 청첩장" />
-      <meta name="keywords" content="React, JavaScript, meta tags" />
-      <meta property="og:image" content={MainImage} />
+      <title data-react-helmet="true">고상범 & 이혜주 결혼합니다</title>
+
+      <meta name="description" content="상범 & 혜주 모바일 청첩장" data-react-helmet="true"/>
+      <meta name="keywords" content="React, JavaScript, meta tags" data-react-helmet="true"/>
+      <meta property="og:image" content={MainImage} data-react-helmet="true" />
+
+      
       </Helmet>
       <audio autoPlay loop>
         <source src={Song} />
