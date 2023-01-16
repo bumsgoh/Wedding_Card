@@ -145,7 +145,7 @@ function ModalView({groomVisible, setGroomVisible}) {
   return (
     <Modal
     title={<span style={{fontFamily: 'MaruBuri-Bold'}}>혼주 전화번호</span>}
-    visible={groomVisible}
+    open={groomVisible}
     onOk={() => setGroomVisible(false)}
     onCancel={() => setGroomVisible(false)}
     footer={
