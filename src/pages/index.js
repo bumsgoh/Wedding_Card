@@ -47,14 +47,14 @@ const IndexPage = () => {
     
   });
   return (
-    
+    <Helmet>
     <Wrapper>
-      <Helmet>
+      
         <title>고상범 & 이혜주 결혼합니다</title>
         <meta name="description" content="상범 & 혜주 모바일 청첩장" />
         <meta name="keywords" content="React, JavaScript, meta tags" />
         <meta name="thumbnail" content="https://firebasestorage.googleapis.com/v0/b/abroadapp-22417.appspot.com/o/dev%2FuserProfileImage%2Fgallery_7.jpeg?alt=media&token=adb2f816-a373-4f28-856a-86de3af9d2d6" />
-      </Helmet>
+      
       <audio autoPlay loop>
         <source src={Song} />
       </audio>
@@ -66,6 +66,7 @@ const IndexPage = () => {
       <Quote />
       <CongratulatoryMoney />
     </Wrapper>
+    </Helmet>
   );
 };
 
