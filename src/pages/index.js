@@ -8,7 +8,7 @@ import Greeting from "../components/greeting";
 import Title from "../components/title";
 import Calendar from "../components/calendar";
 import "../styles/index.css";
-import MainImage from "../assets/gallery_1.webp";
+import MainImage from "../assets/gallery_7.webp";
 import GroovePaper from "../assets/GroovePaper.png";
 import Location from "../components/location";
 import CongratulatoryMoney from "../components/congratulatoryMoney";
