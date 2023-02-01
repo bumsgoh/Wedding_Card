@@ -33,7 +33,7 @@ const Head = () => (
     <thumb></thumb>
     <meta name="description" content="상범 & 혜주 모바일 청첩장" />
     <meta name="keywords" content="React, JavaScript, meta tags" />
-    <meta name="thumbnail" content="https://firebasestorage.googleapis.com/v0/b/abroadapp-22417.appspot.com/o/dev%2FuserProfileImage%2Fgallery_7.jpeg?alt=media&token=adb2f816-a373-4f28-856a-86de3af9d2d6" />
+    <meta name="thumbnail" content="https://firebasestorage.googleapis.com/v0/b/abroadapp-22417.appspot.com/o/userProfileImage%2Fgallery_7.jpeg?alt=media&token=b2201405-7a5d-42f6-960a-c5c772215632" />
   </>
 )
 const IndexPage = () => {
