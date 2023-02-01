@@ -3,14 +3,14 @@ import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
 import styled from "styled-components";
 
-import GalleryPhoto1 from "../assets/gallery_1.webp";
-import GalleryPhoto2 from "../assets/gallery_2.webp";
-import GalleryPhoto3 from "../assets/gallery_3.webp";
-import GalleryPhoto4 from "../assets/gallery_4.webp";
-import GalleryPhoto5 from "../assets/gallery_5.webp";
-import GalleryPhoto6 from "../assets/gallery_6.webp";
-import GalleryPhoto7 from "../assets/gallery_7.webp";
-
+import GalleryPhoto1 from "../assets/GalleryImage_1.webp";
+import GalleryPhoto2 from "../assets/GalleryImage_2.webp";
+import GalleryPhoto3 from "../assets/GalleryImage_3.webp";
+import GalleryPhoto4 from "../assets/GalleryImage_4.webp";
+import GalleryPhoto5 from "../assets/GalleryImage_5.webp";
+import GalleryPhoto6 from "../assets/GalleryImage_6.webp";
+import GalleryPhoto7 from "../assets/GalleryImage_7.webp";
+import GalleryPhoto8 from "../assets/GalleryImage_8.webp";
 const Wrapper = styled.div`
   padding-top: 300px;
   margin-bottom: 250px;
@@ -80,6 +80,10 @@ const images = [
   {
     original: GalleryPhoto7,
     thumbnail: GalleryPhoto7,
+  },
+  {
+    original: GalleryPhoto8,
+    thumbnail: GalleryPhoto8,
   },
 ];
 
