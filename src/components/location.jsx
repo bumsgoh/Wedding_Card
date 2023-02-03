@@ -40,6 +40,15 @@ const LocationTitle = styled.p`
   margin: 0;
 `;
 
+const LocationSubTitle = styled.p`
+  font-size: 120%;
+  color: var(--font-color);
+  letter-spacing: normal;
+  display: inline;
+  font-family: "MaruBuri-SemiBold";
+  margin: 0;
+`;
+
 const LocationNormalText = styled.p`
   font-size: 100%;
   color: var(--font-color);
@@ -146,12 +155,14 @@ const Location = () => {
       <VerticalSpacer height="0px"></VerticalSpacer>
       <NormalText>LOCATION</NormalText>
       <VerticalSpacer height="40px"></VerticalSpacer>
-      <LocationTitle>더마레보 15F Atelier.M</LocationTitle>
+      <LocationTitle>더마레보 15층 Atelier.M</LocationTitle>
       <VerticalSpacer height="0px"></VerticalSpacer>
+      <LocationSubTitle>(연회장 13층, 14층)</LocationSubTitle>
+      <VerticalSpacer height="10px"></VerticalSpacer>
       <LocationNormalText>경기도 수원시 영통구 봉영로 1591</LocationNormalText>
       <VerticalSpacer height="0px"></VerticalSpacer>
       <LocationSubNormalText>Tel. 031-202-3773</LocationSubNormalText>
-      <VerticalSpacer height="20px"></VerticalSpacer>
+      <VerticalSpacer height="50px"></VerticalSpacer>
       <div id="daumRoughmapContainer1671398290485" class="root_daum_roughmap root_daum_roughmap_landing"></div>
       <VerticalSpacer height="60px"></VerticalSpacer>
       <ImageBackground src={LocationImage} />
